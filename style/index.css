@@ -1,3 +1,143 @@
-* {
-  border: 1px solid;
+body {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: rgb(46, 237, 244);
+}
+
+#gameboy {
+  height: 700px;
+  width: 450px;
+  /* border: 5px solid black; */
+  border-radius: 10px 10px 20% 10px;
+  box-shadow: 0px 0px 50px rgb(200, 200, 200), inset 0px 0px 10px black;
+  /* background-color: #e1dfdf; */
+  background: rgb(205, 205, 205);
+  background: -moz-linear-gradient(5deg, rgba(205, 205, 205, 1) 0%, rgba(228, 227, 220, 1) 100%);
+  background: -webkit-linear-gradient(5deg, rgba(205, 205, 205, 1) 0%, rgba(228, 227, 220, 1) 100%);
+  background: linear-gradient(5deg, rgba(205, 205, 205, 1) 0%, rgba(228, 227, 220, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cdcdcd", endColorstr="#e4e3dc", GradientType=1);
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#Bordepantalla {
+  position: relative;
+  top: 50px;
+  width: 80%;
+  height: 250px;
+  background-color: #767585;
+  border: 5px solid black;
+  border-radius: 10px 10px 20% 10px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 10px;
+  gap: 20px;
+}
+
+#pantalla {
+  border-radius: 2px;
+  width: 65%;
+  height: 200px;
+  background-color: #9c9f4c;
+  box-shadow: inset 3px 3px 20px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-size: cover;
+
+  & img {
+    width: 80%;
+    filter: drop-shadow(5px 5px 5px black);
+
+  }
+}
+
+#circulo {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  box-shadow: none;
+  background-color: rgb(68, 16, 16);
+  animation: powerOnEffect 1.5s linear infinite alternate;
+  transition: all 1s;
+}
+
+@keyframes powerOnEffect {
+  0% {
+    background-color: rgb(68, 16, 16);
+  }
+
+  100% {
+    background-color: red;
+    box-shadow: 0px 0px 5px red, 0px 0px 5px white;
+  }
+}
+
+#bateria {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  & p {
+    font-size: 10px;
+    color: lightgray;
+    font-family: sans-serif;
+  }
+
+  /* margin-right: 10px; */
+}
+
+#textoGameboy {
+  width: 85%;
+
+  font-size: 20px;
+  color: black;
+  margin-top: 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #4c3098;
+
+  & i {
+    font-size: 25px;
+    font-weight: normal;
+  }
+
+  & span {
+    font-size: 10px;
+  }
+}
+
+#botones {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  box-shadow: inset 5px 5px 20px rgb(171, 171, 171);
+  border-radius: 50px;
+  transform: rotate(-20deg);
+}
+
+button {
+  text-align: center;
+
+  all: unset;
+  font-size: 25px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: rgb(137, 23, 23);
+  color: white;
+  padding: 10px;
+  box-shadow: inset 0px 3px 2px white, -2.5px 5px 6px black;
+  cursor: pointer;
+
 }

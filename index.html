@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokedex by Hache</title>
+  <link rel="stylesheet" href="style/index.css">
+  
+</head>
+<body onload="fetchPokemonImage()">
+  <div id="gameboy">
+    <section id="Bordepantalla">
+      <div id="bateria">
+        <div id="circulo"></div>
+        <p>BATTERY</p>
+      </div>
+
+      <div id="pantalla">
+        <img id="pokemonImage" alt="Imagen del Pokémon" width="300">
+      </div>
+      
+    </section>
+    <div id="textoGameboy">
+      <p>Nintendo <i>GAME BOY</i> <span>TM</span></p>
+    </div>
+
+    <div id="botones">
+      <button id="previous" onclick="goBack()">🡰</button>
+      <button id="next" onclick="goNext()">🡲</button>
+    </div>
+
+    <button id="Encender" style="margin-top: 20px; background-color: rgb(244, 248, 244);">🔌</button>
+  </div>
+
+  <script src="scripts/pokeapi_fetch.js"></script>
+</body>
+
+
+</html>
