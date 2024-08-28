@@ -1,10 +1,10 @@
 let currentPokemonId = 1;
 const boton = document.getElementById('Encender');
 const pantalla = document.getElementById('pantalla');
+var encendido = new Boolean(false);
 
 
 function fetchPokemonImage() {
-  
   
     // URL de la API para el primer Pokémon (Bulbasaur)
     const apiUrl = `https://pokeapi.co/api/v2/pokemon/${currentPokemonId}`;
@@ -27,26 +27,48 @@ function fetchPokemonImage() {
 
 function goNext() {
 
-  currentPokemonId++;
-
-  fetchPokemonImage();
-
+  if (encendido == true) {
+    currentPokemonId++;
+    fetchPokemonImage();
+  }
+  else {
+    alert("Enciende la consola");
+  }
 }
 function goBack() {
 
-  if(currentPokemonId == 1) {
-    alert("No hay pokemon anteriores a Bulbasaur");
-  } else {
-    currentPokemonId = currentPokemonId - 1;
-
-    fetchPokemonImage();
-  }
-
+  if (encendido == true) {
+    if(currentPokemonId == 1) {
+      alert("No hay pokemon anteriores a Bulbasaur");
+    } else {
+      currentPokemonId = currentPokemonId - 1;
   
+      fetchPokemonImage();
+    }
+  }
 }
 
 
 
-boton.addEventListener('click', function() {
-  pantalla.style.backgroundImage = "url('https://img.freepik.com/vector-gratis/fondo-efecto-zoom-degradado-azul_23-2149762303.jpg?semt=ais_hybrid')";
-});
+// boton.addEventListener('click', function() {
+//   pantalla.style.backgroundImage = "url('https://img.freepik.com/vector-gratis/fondo-efecto-zoom-degradado-azul_23-2149762303.jpg?semt=ais_hybrid')";
+// });
+
+
+function EncenderGameboy() {
+  if (encendido == false) {
+    encendido = true;
+    pantalla.style.backgroundImage = "url('https://img.freepik.com/vector-gratis/fondo-efecto-zoom-degradado-azul_23-2149762303.jpg?semt=ais_hybrid')";
+    fetchPokemonImage();
+  }
+  else {
+    encendido = false;
+    apagarPantalla();
+  }
+}
+
+function apagarPantalla() {
+  pantalla.style.backgroundImage = "";
+  document.getElementById('pokemonImage').src = "";
+  currentPokemonId = 1;
+}

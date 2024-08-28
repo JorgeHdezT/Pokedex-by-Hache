@@ -7,8 +7,13 @@
   <link rel="stylesheet" href="style/index.css">
   
 </head>
-<body onload="fetchPokemonImage()">
+<body>
   <div id="gameboy">
+
+    <div id="rayadivisoria">
+      
+    </div>
+
     <section id="Bordepantalla">
       <div id="bateria">
         <div id="circulo"></div>
@@ -16,7 +21,7 @@
       </div>
 
       <div id="pantalla">
-        <img id="pokemonImage" alt="Imagen del Pokémon" width="300">
+        <img id="pokemonImage" width="300">
       </div>
       
     </section>
@@ -29,7 +34,7 @@
       <button id="next" onclick="goNext()">🡲</button>
     </div>
 
-    <button id="Encender" style="margin-top: 20px; background-color: rgb(244, 248, 244);">🔌</button>
+    <button id="Encender" onclick="EncenderGameboy()" style="margin-top: 20px; background-color: rgb(244, 248, 244);">🔌</button>
   </div>
 
   <script src="scripts/pokeapi_fetch.js"></script>
