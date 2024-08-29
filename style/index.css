@@ -280,7 +280,7 @@ button {
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
   #gameboy {
-    margin-top: -200px;
+    margin-top: 0px;
     transform: scale(.7);
   }
 
