@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'PixelFont';
+  src: url('../media/fonts/Pokemon\ Classic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0 auto;
   width: 100%;
@@ -15,7 +22,7 @@ body {
   border-radius: 10px 10px 20% 10px;
   box-shadow: 0px 0px 50px rgb(200, 200, 200), inset 0px 0px 10px black;
   /* background-color: #e1dfdf; */
-  background: rgb(205, 205, 205);
+  background: rgb(241, 241, 241);
   background: -moz-linear-gradient(5deg, rgba(205, 205, 205, 1) 0%, rgba(228, 227, 220, 1) 100%);
   background: -webkit-linear-gradient(5deg, rgba(205, 205, 205, 1) 0%, rgba(228, 227, 220, 1) 100%);
   background: linear-gradient(5deg, rgba(205, 205, 205, 1) 0%, rgba(228, 227, 220, 1) 100%);
@@ -58,15 +65,43 @@ body {
   background-color: #9c9f4c;
   box-shadow: inset 3px 3px 20px black;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-position: center;
   background-size: cover;
+  position: relative; /* Añadido para que funcione position: absolute de los hijos */
+  margin: 0;
 
   & img {
     width: 80%;
     filter: drop-shadow(5px 5px 5px black);
+    margin-bottom: -20px;
 
+  }
+
+  & #pokedexNumber {
+    font-size: 15px;
+    font-family: "PixelFont";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+
+    /*colores*/
+    /* border: 2px solid white; */
+    /* background-color: rgba(0, 0, 0, 0.363); */
+    padding: 5px;
+    border-radius: 0px 10px 0px 10px;
+  }
+
+  & #type {
+    font-family: "PixelFont";
+    text-transform: uppercase;
+    color: white;
+    font-size: 12px;
+    text-shadow: 2px 2px 0px black;
   }
 }
 
@@ -182,6 +217,7 @@ body {
 
 
 #botones {
+  font-family: "PixelFont";
   margin-left: 20%;
   display: flex;
   gap: 20px;
@@ -193,17 +229,29 @@ body {
 
 button {
   text-align: center;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
   all: unset;
   font-size: 25px;
-  width: 35px;
-  height: 35px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   background-color: rgb(137, 23, 23);
-  color: white;
-  padding: 10px;
-  box-shadow: inset 0px 3px 2px white, -2.5px 5px 6px black;
+  
+  padding: 0;
+  box-shadow: inset 0px 3px 2px white, -2.5px 5px 6px black, inset 0px 0px 10px rgba(0, 0, 0, 0.466);
   cursor: pointer;
+  box-sizing: border-box;
+
+  & span {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.13);
+  }
 
 }
 
@@ -212,8 +260,35 @@ button {
   background-color: rgb(244, 248, 244);
 }
 
+#SearchButton {
+  position: absolute;
+  font-size: 20px;
+  top: 100px;
+  left: 20px;
+  cursor: pointer;
+}
+
+#Creditos {
+  position: absolute;
+  font-size: 15px;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  color: white;
+  font-family: "pixelfont";
+}
+
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
   #gameboy {
+    margin-top: -200px;
     transform: scale(.7);
+  }
+
+  #Creditos {
+    font-size: 10px;
+  }
+
+  #SearchButton {
+    top: 100px;
   }
 }

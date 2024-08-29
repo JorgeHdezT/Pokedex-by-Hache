@@ -22,7 +22,9 @@
       </div>
 
       <div id="pantalla">
-        <img id="pokemonImage" width="300">
+        <div id="pokedexNumber"></div>
+        <img id="pokemonImage">
+        <div id="type"></div>
       </div>
       
     </section>
@@ -40,18 +42,21 @@
       </div>
 
       <div id="botones">
-        <button id="previous" onclick="goBack()">🡰</button>
-        <button id="next" onclick="goNext()">🡲</button>
+        <button id="previous" onclick="goBack()"><span>B</span></button>
+        <button id="next" onclick="goNext()"><span>A</span></button>
       </div>
 
     </section>
 
     
 
-    <button id="Encender" onclick="EncenderGameboy()">🔌</button>
+    <button id="Encender" onclick="EncenderGameboy()"><span style="color: white;">🔌</span></button>
   </div>
 
   <audio src="media/audio/pokemon theme cutted.mp3" id="pokemonThemeAudio"></audio>
+
+  <div id="Creditos">Desarrollado por Jorge Hernández Toledo. <br> 08/2024</div>
+  <div id="SearchButton" onclick="buscar()">🔎</div>
 
   <script src="scripts/pokeapi_fetch.js"></script>
   
