@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pokedex by Hache</title>
   <link rel="stylesheet" href="style/index.css">
+  <link rel="icon" href="media/images/favicon.png">
   
 </head>
 <body>
@@ -29,15 +30,31 @@
       <p>Nintendo <i>GAME BOY</i> <span>TM</span></p>
     </div>
 
-    <div id="botones">
-      <button id="previous" onclick="goBack()">🡰</button>
-      <button id="next" onclick="goNext()">🡲</button>
-    </div>
+    <section id="crucetaybotones">
 
-    <button id="Encender" onclick="EncenderGameboy()" style="margin-top: 20px; background-color: rgb(244, 248, 244);">🔌</button>
+      <div id="cruceta">
+        <div id="rectangle1" class="crosspad"></div>
+        <div id="rectangle2" class="crosspad">
+          <div id="circle"></div>
+        </div>
+      </div>
+
+      <div id="botones">
+        <button id="previous" onclick="goBack()">🡰</button>
+        <button id="next" onclick="goNext()">🡲</button>
+      </div>
+
+    </section>
+
+    
+
+    <button id="Encender" onclick="EncenderGameboy()">🔌</button>
   </div>
 
+  <audio src="media/audio/pokemon theme cutted.mp3" id="pokemonThemeAudio"></audio>
+
   <script src="scripts/pokeapi_fetch.js"></script>
+  
 </body>
 
 

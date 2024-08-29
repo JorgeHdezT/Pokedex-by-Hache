@@ -1,7 +1,8 @@
 let currentPokemonId = 1;
 const boton = document.getElementById('Encender');
 const pantalla = document.getElementById('pantalla');
-var encendido = new Boolean(false);
+let encendido = new Boolean(false);
+let audio = document.getElementById("pokemonThemeAudio");
 
 
 function fetchPokemonImage() {
@@ -58,8 +59,10 @@ function goBack() {
 function EncenderGameboy() {
   if (encendido == false) {
     encendido = true;
+    playAudio();
     pantalla.style.backgroundImage = "url('https://img.freepik.com/vector-gratis/fondo-efecto-zoom-degradado-azul_23-2149762303.jpg?semt=ais_hybrid')";
     fetchPokemonImage();
+
   }
   else {
     encendido = false;
@@ -68,7 +71,17 @@ function EncenderGameboy() {
 }
 
 function apagarPantalla() {
+  stopAudio();
   pantalla.style.backgroundImage = "";
   document.getElementById('pokemonImage').src = "";
   currentPokemonId = 1;
+}
+
+function playAudio() {
+  audio.play();
+}
+
+function stopAudio() {
+  audio.pause();    
+  audio.currentTime = 0;
 }

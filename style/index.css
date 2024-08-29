@@ -111,7 +111,7 @@ body {
 
   font-size: 20px;
   color: black;
-  margin-top: 40px;
+  margin-top: 0px;
   font-family: sans-serif;
   font-weight: bold;
   color: #4c3098;
@@ -126,13 +126,69 @@ body {
   }
 }
 
+#crucetaybotones {
+  margin-top: 20px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+#cruceta {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+
+  /*color*/
+  box-shadow: inset 0px 10px 20px rgba(151, 151, 151, 0.315), inset 0px 0px 0px rgb(231, 231, 231), 0px 0px 20px rgba(255, 255, 255, 0.233);
+
+  & .crosspad {
+    position: absolute;
+    width: 16%;
+    height: 30px;
+    background-color: rgb(22, 22, 22);
+    border-radius: 10px;
+    border: 4px solid rgb(22, 22, 22);
+  }
+
+  & #rectangle1 {
+    box-shadow: inset 0px 1.5px 0px rgb(187, 186, 186), 0px 3px 3px rgba(0, 0, 0, 0.658);
+  }
+
+  & #rectangle2 {
+    box-shadow: inset 0px 1px 2px rgb(22, 22, 22), inset 2px 0px 0px rgb(187, 186, 186), 3px 0px 3px rgba(0, 0, 0, 0.521);
+    transform: rotate(90deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & #circle {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: rgb(49, 49, 49);
+      box-shadow: inset 20px 0px 10px rgb(22, 22, 22);
+      border: 4px solid rgb(20, 20, 20);
+    }
+  }
+}
+
+
+
 #botones {
+  margin-left: 20%;
   display: flex;
   gap: 20px;
   padding: 10px;
   box-shadow: inset 5px 5px 20px rgb(171, 171, 171);
   border-radius: 50px;
-  transform: rotate(-20deg);
+  transform: rotate(-28deg);
 }
 
 button {
@@ -149,6 +205,11 @@ button {
   box-shadow: inset 0px 3px 2px white, -2.5px 5px 6px black;
   cursor: pointer;
 
+}
+
+#Encender {
+  margin-top: 20px;
+  background-color: rgb(244, 248, 244);
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
