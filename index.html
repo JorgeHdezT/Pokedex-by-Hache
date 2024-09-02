@@ -11,6 +11,15 @@
 </head>
 
 <body>
+  <div id="PokemonSelector">
+    <h2>Buscar un Pokemon</h2>
+    <form action="" onsubmit="return false;">
+      <input type="number" placeholder="Ejemplo: 875" id="pokemonNumberInput" name="number" min="0" max="1025">
+      <span id="error-message" style="color: red; font-size: 14px;"></span>
+      <button type="button" onclick="SearchPokemon()" id="searchButton" disabled>Buscar</button>
+    </form>
+  </div>
+
   <div id="gameboy">
 
     <div id="rayadivisoria">
@@ -24,6 +33,7 @@
       </div>
 
       <div id="pantalla">
+        <div id="pokemonName"></div>
         <div id="pokedexNumber"></div>
         <img id="pokemonImage">
         <div id="type"></div>

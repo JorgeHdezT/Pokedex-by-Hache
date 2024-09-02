@@ -81,11 +81,11 @@ body {
   }
 
   & #pokedexNumber {
-    font-size: 15px;
+    font-size: 10px;
     font-family: "PixelFont";
     position: absolute;
     top: 10px;
-    left: 10px;
+    left: 5px;
     color: white;
     text-shadow: 1px 1px 2px black;
 
@@ -94,6 +94,18 @@ body {
     /* background-color: rgba(0, 0, 0, 0.363); */
     padding: 5px;
     border-radius: 0px 10px 0px 10px;
+  }
+
+  & #pokemonName {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    color: white;
+    font-family: "PixelFont";
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
   }
 
   & #type {
@@ -278,9 +290,50 @@ button {
   font-family: "pixelfont";
 }
 
+#PokemonSelector {
+  font-family: "pixelfont";
+  top: 150px;
+  left: -20000px;
+  width: 300px;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.732);
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 20px red;
+  text-align: center;
+  transition: all .25s;
+
+  & form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    & button {
+      border-radius: 10px;
+      width: auto;
+      font-size: 20px;
+      padding: 10px;
+      text-transform: uppercase;
+      font-family: "PixelFont";
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      transition: all .5s;
+    }
+
+    & input {
+      border: 2px solid rgba(255, 0, 0, 0.622);
+      border-radius: 10px;
+      padding: 10px;
+    }
+  }
+  
+}
+
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
   #gameboy {
-    margin-top: 0px;
+    margin-top: 80px;
     transform: scale(.7);
   }
 
@@ -290,5 +343,16 @@ button {
 
   #SearchButton {
     top: 100px;
+  }
+
+  #PokemonSelector {
+    transform: scale(.6);
+    z-index: 1;
+    top: 10px;
+    left: -20000px;
+    width: 300px;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.714);
+
   }
 }

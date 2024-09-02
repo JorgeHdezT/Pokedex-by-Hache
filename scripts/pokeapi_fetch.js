@@ -48,12 +48,34 @@ function fetchPokemonType() {
     });
 }
 
+function fetchPokemonName() {
+
+  // URL de la API para el primer Pokémon (Bulbasaur)
+  let apiUrl = `https://pokeapi.co/api/v2/pokemon/${currentPokemonId}`;
+
+  // Realizar la solicitud fetch a la API
+  fetch(apiUrl)
+    .then(response => response.json())  // Convertir la respuesta a JSON
+    .then(data => {
+      // Obtener la URL de la imagen del Pokémon
+      let pokemonName = data.name;
+
+      // Mostrar la imagen en el elemento img
+       document.getElementById('pokemonName').innerHTML = `${pokemonName}`;
+
+    })
+    .catch(error => {
+      console.error('Error al obtener el nombre del Pokémon:', error);
+    });
+}
+
 function goNext() {
 
   if (encendido == true) {
     currentPokemonId++;
     fetchPokemonImage();
     fetchPokemonType();
+    fetchPokemonName();
   }
   else {
     alert("Enciende la consola");
@@ -69,6 +91,7 @@ function goBack() {
 
       fetchPokemonImage();
       fetchPokemonType();
+      fetchPokemonName();
     }
   }
 }
@@ -87,6 +110,7 @@ function EncenderGameboy() {
     pantalla.style.backgroundImage = "url('https://img.freepik.com/vector-gratis/fondo-efecto-zoom-degradado-azul_23-2149762303.jpg?semt=ais_hybrid')";
     fetchPokemonImage();
     fetchPokemonType();
+    fetchPokemonName();
 
   }
   else {
@@ -102,6 +126,7 @@ function apagarPantalla() {
   document.getElementById("pokedexNumber").innerHTML = "";
   document.getElementById("type").innerHTML = "";
   currentPokemonId = 1;
+  document.getElementById("PokemonSelector").style.left = "-2000px";
 }
 
 function playAudio() {
@@ -115,5 +140,53 @@ function stopAudio() {
 }
 
 function buscar() {
-  alert("En desarrollo. Disculpe las molestias");
+  document.getElementById("PokemonSelector").style.left = "20px";
 }
+
+function SearchPokemon() {
+  // Obtener el valor del input
+  const pokemonNumber = document.getElementById("pokemonNumberInput").value;
+  
+  
+  if (encendido == true) {
+    currentPokemonId = pokemonNumber;
+    fetchPokemonImage();
+    fetchPokemonName();
+    fetchPokemonType();
+  }
+  else {
+    alert("Para buscar un Pokemon, enciende la consola por favor");
+  }
+}
+
+// Función para validar el input y habilitar/deshabilitar el botón
+function validateInput() {
+  const input = document.getElementById("pokemonNumberInput");
+  const button = document.getElementById("searchButton");
+  const value = input.value.trim();
+
+  // Convertir el valor a número
+  const number = Number(value);
+
+  // Verificar que el campo no esté vacío, que sea un entero, y esté dentro del rango
+  if (
+      value !== "" && 
+      Number.isInteger(number) && 
+      number >= 0 && 
+      number <= 1025
+  ) {
+      button.disabled = false;
+      button.style.filter = "opacity(1)";
+  } else {
+      button.disabled = true;
+      button.style.filter = "opacity(.5)";
+  }
+}
+
+// Añadir un listener al input para validar en cada cambio
+document.getElementById("pokemonNumberInput").addEventListener("input", validateInput);
+
+// Validar el input al cargar la página por si hay un valor predefinido
+window.addEventListener('DOMContentLoaded', (event) => {
+  validateInput();
+});
