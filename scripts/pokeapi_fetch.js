@@ -124,6 +124,7 @@ function apagarPantalla() {
   pantalla.style.backgroundImage = "";
   document.getElementById('pokemonImage').src = "";
   document.getElementById("pokedexNumber").innerHTML = "";
+  document.getElementById("pokemonName").innerHTML = "";
   document.getElementById("type").innerHTML = "";
   currentPokemonId = 1;
   document.getElementById("PokemonSelector").style.left = "-2000px";
